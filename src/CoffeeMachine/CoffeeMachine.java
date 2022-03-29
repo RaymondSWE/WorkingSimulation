@@ -79,6 +79,7 @@ public class CoffeeMachine implements Runnable {
 		coffeeList.add(addCoffee);
 	}
 	
+	
 	public class ProduceCoffee extends Thread {
 		public void run() {
 			while(System.currentTimeMillis() < endTimer) {

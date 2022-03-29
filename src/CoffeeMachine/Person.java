@@ -73,7 +73,7 @@ public class Person implements Runnable{
 				//decrease the energyLevel by 1
 				this.energyLevel--;
 				try {
-					//Sleep for how long the eneryDecay is
+					//Sleep for how long the energyDecay is
 					Thread.sleep(this.energyDecay);
 				} catch (InterruptedException e) {
 					System.out.print("Cannot put into sleep");
