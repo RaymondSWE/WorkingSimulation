@@ -1,18 +1,16 @@
 package CoffeeMachine;
-import java.util.Random;
+
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class CoffeeMachine implements Runnable {
 	ConcurrentLinkedQueue<Person> personQueue = new ConcurrentLinkedQueue<Person>();
 	ConcurrentLinkedQueue<Coffee> coffeeList = new ConcurrentLinkedQueue<Coffee>();
-	
 	//The higher the coffeeSleeper is, the longer it takes to brew drinks
 	private int coffeeSleeper = (int) (2000/1f);
 	//The higher the giveDrinkSleeper is the longer it takes to give out drinks to the workers
 	private int giveDrinkSleeper = (int) (1000/1);
-
-	long endTimer = System.currentTimeMillis() + 20 * 1000; 
-	
+	long endTimer = System.currentTimeMillis() + 20 * 1000;
+	private RandomUtility random=new RandomUtility();
 	public void run() {
 		//Start the Coffemachine  process
 		startProducing();
@@ -57,9 +55,8 @@ public class CoffeeMachine implements Runnable {
 		String coffeeType ;
 		int min ;
 		int max ;
-		Random rand = new Random();
 		//Random value between 0-2
-		int randomCoffee = rand.nextInt(3);
+		int randomCoffee = random.getRandomNumber(0, 2);
 		
 		//Sets the value depending on what randomCoffee gives
 		if(randomCoffee == 0) {
@@ -75,8 +72,7 @@ public class CoffeeMachine implements Runnable {
 			min = 25 ;
 			max = 35 ;
 		}
-		Coffee addCoffee = new Coffee(coffeeType, max, min);
-		coffeeList.add(addCoffee);
+		coffeeList.add(new Coffee(coffeeType, max, min));
 	}
 	
 	

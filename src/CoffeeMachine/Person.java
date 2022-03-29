@@ -1,12 +1,12 @@
 package CoffeeMachine;
-import java.util.Random;
 
 public class Person implements Runnable{
 	private final String name;
 	CoffeeMachine machine;
 	private int energyLevel;
-	private int energyDecay;
+	private long energyDecay;
 	private long endTimer = System.currentTimeMillis() + 20 * 1000 ;
+	private RandomUtility random=new RandomUtility();
 	// The state of the worker to check if he/she is tired, working or on a break
 	enum State {
 		WORK, TIRED, BREAK,
@@ -15,12 +15,11 @@ public class Person implements Runnable{
 	public Person(String name, CoffeeMachine machine, int min, int max) {
 		this.name = name;
 		this.machine = machine;
-		this.energyLevel = random(min, max);
-		this.energyDecay = (int) (random(500, 1500) / 1f);
-	}
-	public static int random(int min, int max) {
-		Random rand = new Random();
-		return rand.nextInt(max - min) + min;
+//		this.energyLevel = random.getRandomNumber(max - min) + min;
+this.energyLevel=random.getRandomNumber(min, max);
+		//this.energyDecay = (int) (random.getRandomNumber(max - min) + min) / 1f);
+		this.energyDecay=(long) random.getRandomNumber(min, max);
+
 	}
 	
 	public void drinkCoffee(Coffee coffee) {
@@ -37,7 +36,7 @@ public class Person implements Runnable{
 		return name;
 	}
 	
-	public int getEnergyDecay() {
+	public double getEnergyDecay() {
 		return this.energyDecay;
 	}
 
