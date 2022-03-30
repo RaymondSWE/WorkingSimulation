@@ -18,7 +18,8 @@ public class Fika {
 		 * Randomize names, taken from randomName method.
 		 */
 		RandomUtility random=new RandomUtility();
-
+int min=random.getRandomNumber(0, 30);
+int max=random.getRandomNumber(30, 90);
 		for (int i = 0; i < 4; i++) {
 			persons[i] = new Person(randomName(random), drink, min, max);
 			Thread personThreads = new Thread(persons[i]);
@@ -31,7 +32,7 @@ public class Fika {
 		String[] lastTwo = { "ta", "xi", "ri", "ny", "er", "bu", "an", "ck", "rl", "ll", "on", "rt", "ra", "sa", "ta"};
 
 		String selectFirstTwo = firstTwo[random.getRandomNumber(0, firstTwo.length)];
-		String selectLastTwo = lastTwo[random.getRandomNumber(0, lastTwo.length)];
+		String selectLastTwo = lastTwo[random.getRandomNumber(0, lastTwo.length-1)];
 		return selectFirstTwo + selectLastTwo;
 	}
 
