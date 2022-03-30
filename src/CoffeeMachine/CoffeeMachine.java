@@ -58,7 +58,7 @@ public class CoffeeMachine implements Runnable {
 		int min ;
 		int max ;
 		Random rand = new Random();
-		//Random value between 0-2
+		//Random value between 0-3
 		int randomCoffee = rand.nextInt(3);
 		
 		//Sets the value depending on what randomCoffee gives
