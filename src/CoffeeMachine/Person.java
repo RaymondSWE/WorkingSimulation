@@ -18,7 +18,7 @@ public class Person implements Runnable{
 //		this.energyLevel = random.getRandomNumber(max - min) + min;
 this.energyLevel=random.getRandomNumber(min, max);
 		//this.energyDecay = (int) (random.getRandomNumber(max - min) + min) / 1f);
-		this.energyDecay=(long) random.getRandomNumber(min, max);
+		this.energyDecay=(long) random.getRandomNumber(500, 1500);
 
 	}
 	
