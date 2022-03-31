@@ -18,10 +18,8 @@ public class Fika {
 		 * Randomize names, taken from randomName method.
 		 */
 		RandomUtility random=new RandomUtility();
-int min=random.getRandomNumber(0, 30);
-int max=random.getRandomNumber(30, 90);
 		for (int i = 0; i < 4; i++) {
-			persons[i] = new Person(randomName(random), drink, min, max);
+			persons[i] = new Person(randomName(random), drink, 30, 90);
 			Thread personThreads = new Thread(persons[i]);
 			personThreads.start();
 		}
