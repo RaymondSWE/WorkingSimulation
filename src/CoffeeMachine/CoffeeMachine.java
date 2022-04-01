@@ -57,17 +57,6 @@ public class CoffeeMachine implements Runnable {
 
 	// Adds drink to the coffee list
 	public void addDrink() {
-<<<<<<< HEAD
-		String coffeeType ;
-		int min ;
-		int max ;
-		Random rand = new Random();
-		//Random value between 0-3
-		int randomCoffee = rand.nextInt(3);
-		
-		//Sets the value depending on what randomCoffee gives
-		if(randomCoffee == 0) {
-=======
 		String coffeeType;
 		int min;
 		int max;
@@ -76,7 +65,6 @@ public class CoffeeMachine implements Runnable {
 
 		// Sets the value depending on what randomCoffee gives
 		if (randomCoffee == 0) {
->>>>>>> d0cbe840ee3bb522a3c5b72212604197dadf1669
 			coffeeType = "BlackCoffee";
 			min = 15;
 			max = 20;
