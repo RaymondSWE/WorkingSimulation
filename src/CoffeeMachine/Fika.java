@@ -19,7 +19,7 @@ public class Fika {
 		 * Randomize names, taken from randomName method.
 		 */
 		RandomUtility random = new RandomUtility();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < persons.length; i++) {
 			persons[i] = new Person(randomName(random), drink, 30, 90);
 			Thread personThreads = new Thread(persons[i]);
 			personThreads.start();
