@@ -1,6 +1,5 @@
 package CoffeeMachine;
 
-
 public class BlackCoffee extends Coffee {
 	private static final String TYPE = "BlackCoffee";
 	private static final int HIGH_ENERGY = 40;
@@ -10,4 +9,3 @@ public class BlackCoffee extends Coffee {
 		super(TYPE, HIGH_ENERGY, LOW_ENERGY);
 	}
 }
-
